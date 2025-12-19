@@ -50,7 +50,7 @@ class Transaction {
             $params[] = $config;
         }
         $response = $this->rpc->call('sendTransaction', $params);
-        return $response['signature'] ?? ''; // Safely extract the 'signature' key or default to an empty string
+        return $response['result'] ?? ''; // Safely extract the 'signature' key or default to an empty string
     }
 
     public function simulateTransaction(string $transaction, array $config = []): array {
